@@ -1,5 +1,6 @@
 import { supabase } from "@/app/lib/supabase";
-
+import AddToTheCart from "@/components/AddToTheCart";
+import AddToTheFavourite from "@/components/AddToTheFavourite";
 export default async function CategoryPage({params}:{params:{category:string}}){
     const resolvedParams = await params;
     const currentCategory=resolvedParams.category;
@@ -19,8 +20,8 @@ export default async function CategoryPage({params}:{params:{category:string}}){
                         {product.image_url &&(
                             <img src={product.image_url}></img>
                         )}
-                        <button>Add to the cart</button>
-                        <button>Favourite</button>
+                        <AddToTheCart></AddToTheCart>
+                        <AddToTheFavourite></AddToTheFavourite>
                     </li>
                 ))}
             </ul>
