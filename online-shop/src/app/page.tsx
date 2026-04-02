@@ -1,5 +1,6 @@
 import { supabase } from "./lib/supabase";
 import Link from 'next/link';
+import AddToTheCart from "@/components/AddToTheCart";
 export default async function Home() {
  const{data:products,error}=await supabase.from('products').select('*')
  if(error){
@@ -30,7 +31,7 @@ export default async function Home() {
                         {product.image_url &&(
                             <img src={product.image_url}></img>
                         )}
-                        <button>Add to the cart</button>
+                        <AddToTheCart product={product}/>
                         <button>Favourite</button>
                     </li>
                 ))}
