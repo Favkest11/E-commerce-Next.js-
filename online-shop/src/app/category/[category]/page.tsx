@@ -21,7 +21,8 @@ export default async function CategoryPage({params}:{params:{category:string}}){
                             <img src={product.image_url}></img>
                         )}
                         <AddToTheCart product={product}/>
-                        <AddToTheFavourite></AddToTheFavourite>
+                        <AddToTheFavourite product={product}/>
+                        
                     </li>
                 ))}
             </ul>
